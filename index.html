@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>Academic Performance Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="loader-wrapper" class="anychart-loader">
+      <div class="rotating-cover">
+        <div class="rotating-plane">
+            <div class="chart-row"><span class="chart-col green"></span><span class="chart-col orange"></span><span
+                    class="chart-col red"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class = "container-fluid" style=
+   "height:100%">
+      <div class="col-md-8" style=
+     "height:100%">
+        <div style="position:relative" id="stud-container"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="chart_container">
+          <div class="chart" style="height:250px" id="grade-container"></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="chart_container">
+          <div class="chart" style="height:250px" id="section-container"></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="chart_container">
+          <div class="chart" style="height:250px" id="speci-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-bullet.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+
+    <script src="mock_data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
