@@ -7,22 +7,23 @@ function academic_performance_dashboard(myData) {
     allStudGrade(myData);
     allSpeci(myData);
 
-    // set stage
+  // set a stage
   stage = anychart.graphics.create("stud-container");
 
+  // create a legend for stacked bar charts
   var getBarLegend = function (items) {
     var legend = anychart.standalones.legend();
     legend.fontSize('12px')
-            .fontFamily("'Verdana', Helvetica, Arial, sans-serif")
-            .itemsLayout('horizontal-expandable')
-            .fontColor("#999")
-            .padding(0)
-            .margin(5,0,0,0)
-            .iconTextSpacing(3)
-            .align('left')
-            .itemsSpacing(3)
-            .items(items)
-            .iconSize(12);
+          .fontFamily("'Verdana', Helvetica, Arial, sans-serif")
+          .itemsLayout('horizontal-expandable')
+          .fontColor("#999")
+          .padding(0)
+          .margin(5,0,0,0)
+          .iconTextSpacing(3)
+          .align('left')
+          .itemsSpacing(3)
+          .items(items)
+          .iconSize(12);
     return legend
 };
 
@@ -39,7 +40,7 @@ function academic_performance_dashboard(myData) {
             'text': 'reading',
             'iconType': "marker",
             'iconStroke': 'none',
-            'iconFill': "#1976d2"
+            'iconFill': "#3888d8"
         },
         {
             'index': 2,
@@ -57,19 +58,20 @@ function academic_performance_dashboard(myData) {
         }
     ]);
 
+    // create a legend for specialized subject
     var getSpecLegend = function (items) {
-      var legend = anychart.standalones.legend();
-      legend.fontSize('12px')
-              .fontFamily("'Verdana', Helvetica, Arial, sans-serif")
-              .itemsLayout('horizontal-expandable')
-              .fontColor("#999")
-              .padding(0)
-              .margin(5,0,0,0)
-              .iconTextSpacing(3)
-              .align('center')
-              .itemsSpacing(3)
-              .items(items)
-              .iconSize(10);
+    var legend = anychart.standalones.legend();
+    legend.fontSize('12px')
+            .fontFamily("'Verdana', Helvetica, Arial, sans-serif")
+            .itemsLayout('horizontal-expandable')
+            .fontColor("#999")
+            .padding(0)
+            .margin(5,0,0,0)
+            .iconTextSpacing(3)
+            .align('left')
+            .itemsSpacing(3)
+            .items(items)
+            .iconSize(10);
       return legend
     }
     var specLegend = getSpecLegend([
@@ -82,17 +84,17 @@ function academic_performance_dashboard(myData) {
     }
     ]);
 
-  // Title settings
+  // title settings
   var title = anychart.standalones.title();
   title.fontFamily("verdana, helvetica, arial, sans-serif").fontWeight("normal");
   title.text("<span style='color:#999; font-size: 24px;'>Academic performance</span> <span style='color: #999; font-size: 20px; font-weight: normal;'>(English course)</span>");
   title.orientation("top").align("left").vAlign("bottom").margin(10).padding(0).height(20).useHtml(true);
   title.container(stage).draw();
 
-  // content for first row
+  // content for a table header
   var contents = [[null,null,"Students", "Variance from target,", "%", "Final score", "Sections (0-5 scores)"],["",,specLegend,makeAxis(),"","",eachBarLegend]];
 
-  // create table
+  // create a table
   var table = anychart.standalones.table();
 
   table.top(title.getRemainingBounds().getTop());
@@ -109,9 +111,10 @@ function academic_performance_dashboard(myData) {
     ]);
   }
 
-  // set table content
+  // set the table content
   table.contents(contents);
 
+  // set parameters for the first row
   table.cellBorder(null)
   table.getRow(0)
     .height(40)
@@ -119,18 +122,19 @@ function academic_performance_dashboard(myData) {
     .border()
     .bottom("2 #ccc");
 
+  // set fixed width for columns
   table.getCol(0).width(40);
   table.getCol(1).width(30);
   table.getCol(4).width(70);
   table.getCol(5).width(100);
 
-  // visual settings for text in table
-  table.vAlign("middle").hAlign("center").fontWeight('normal').fontSize(14);
+  // set visual settings for the text in table
+  table.vAlign("middle").hAlign("left").fontWeight('normal').fontSize(14);
 
-
-  // set table container and initiate draw
+  // set the table container and initiate drawing
   table.container(stage).draw();
 
+  // create stacked bar charts for sections
   function eachStacked(i) {
     // create a data set
    var data = anychart.data.set([
@@ -144,19 +148,14 @@ function academic_performance_dashboard(myData) {
    var seriesData_3 = data.mapAs({x: 0, value: 3});
    var seriesData_4 = data.mapAs({x: 0, value: 4});
 
-   // create a chart
    eachBar = anychart.bar();
 
-    var setupSeriesLabels = function (series, name) {
-     series.name(name)
-
+   var setupSeriesLabels = function (series, name) {
+    series.name(name)
    };
    var series;
 
-   // enable the percent stacking mode
-   eachBar.yScale().stackMode("value");
-
-   // create area series, set the data
+   // create an area series, set the data
    series = eachBar.bar(seriesData_1);
    setupSeriesLabels(series, 'listening');
    series = eachBar.bar(seriesData_2);
@@ -172,22 +171,25 @@ function academic_performance_dashboard(myData) {
    eachBar.tooltip()
         .displayMode('union');
 
+   // set max and min value
    eachBar.yScale().minimum(0).maximum(20);
    eachBar.animation(true);
 
+   // enable the value stacking mode
    eachBar.yScale().stackMode('value');
 
+   // disable interactivity
    var interactivity = eachBar.interactivity();
   interactivity.selectionMode("none");
 
-// set yAxis labels formatting, force it to add % to values
-   // configure labels on the Y-axis
+   // disable axis
    eachBar.yAxis(false);
    eachBar.xAxis(false);
 
    return eachBar;
   }
 
+  // create a red circle for specialized subject
   function specSubject (i) {
 
     if (myData[i]['specialized_subject']==true) {
@@ -198,13 +200,14 @@ function academic_performance_dashboard(myData) {
     }
   }
 
+  // create bullet charts for target and accomplished score
   function newBullet (i) {
 
   bullet = anychart.bullet([
     {
         value: myData[i]['accomplished'],
         type: 'bar',
-        fill: '#1976d2',
+        fill: '#3888d8',
         gap: 0.75,
         stroke: null
     },
@@ -215,9 +218,9 @@ function academic_performance_dashboard(myData) {
         stroke: {thickness: 2, color: '#555555'}
     }
 
-
   ]);
-  // Set chart ranges
+
+   // set chart ranges
    bullet.range().from(0).to(50);
    bullet.range(1).from(50).to(60);
    bullet.range(2).from(60).to(70);
@@ -229,6 +232,7 @@ function academic_performance_dashboard(myData) {
   return bullet;
   }
 
+  // create axis for bullet charts
   function makeAxis (){
     var axis = anychart.standalones.axes.linear();
     var bulletScale = anychart.scales.linear();
@@ -239,6 +243,7 @@ function academic_performance_dashboard(myData) {
     return axis;
   }
 
+  // calculate % (accomplished to target)
   function calculatePercentToTarget(i) {
 
        var targetPercent = Math.round(myData[i]['accomplished']/myData[i]['target']*100);
@@ -246,56 +251,60 @@ function academic_performance_dashboard(myData) {
        else return  targetPercent + '%';
    }
 
-    function allStudGrade(myData, title, container){
-      var  art =0 , beau = 0, cred =0, diver = 0, enou = 0, fail = 0;
-      for (i = 0; i < myData.length; i++) {
-        if (myData[i]['accomplished'] >= 90) {
-          art++;
-        }
-        else if (myData[i]['accomplished'] >= 80 && myData[i]['accomplished'] < 90) {
-          beau++;
-        }
-        else if (myData[i]['accomplished'] >= 70 && myData[i]['accomplished'] < 80) {
-          cred++;
-        }
-        else if (myData[i]['accomplished'] >= 60 && myData[i]['accomplished'] < 70) {
-          diver++;
-        }
-        else if (myData[i]['accomplished'] >= 50 && myData[i]['accomplished'] < 60) {
-          enou++;
-        }
-        else {
-          fail++
-        }
-
+  // create a bar chart "Total grade assessment"
+  function allStudGrade(myData, title, container){
+    // calculate number of people for each grade
+    var  art =0 , beau = 0, cred =0, diver = 0, enou = 0, fail = 0;
+    for (i = 0; i < myData.length; i++) {
+      if (myData[i]['accomplished'] >= 90) {
+        art++;
       }
-      var allGradeData = [
-        {x: "A (90-100)", value: art},
-        {x: "B (80-89)", value: beau},
-        {x: "C (70-79)", value: cred},
-        {x: "D (60-69)", value: diver},
-        {x: "E (50-59)", value: enou},
-        {x: "F (0-49)", value: fail}
-      ];
+      else if (myData[i]['accomplished'] >= 80 && myData[i]['accomplished'] < 90) {
+        beau++;
+      }
+      else if (myData[i]['accomplished'] >= 70 && myData[i]['accomplished'] < 80) {
+        cred++;
+      }
+      else if (myData[i]['accomplished'] >= 60 && myData[i]['accomplished'] < 70) {
+        diver++;
+      }
+      else if (myData[i]['accomplished'] >= 50 && myData[i]['accomplished'] < 60) {
+        enou++;
+      }
+      else {
+        fail++
+      }
 
-      // create a chart
+    }
+    var allGradeData = [
+      {x: "A (90-100)", value: art},
+      {x: "B (80-89)", value: beau},
+      {x: "C (70-79)", value: cred},
+      {x: "D (60-69)", value: diver},
+      {x: "E (50-59)", value: enou},
+      {x: "F (0-49)", value: fail}
+    ];
+
       chart = anychart.bar();
 
-      // create a bar series and set the datachart = anychart.bar()
+      // create a bar series
       var series = chart.bar(allGradeData);
-      series.name("Total");
+      series.name("Students");
       series.selectionMode("none");
 
+      // set the chart title
       chart.title('Total grade assessment');
 
-      // set the container id
+      // set the container
       chart.container("grade-container");
 
       // initiate drawing the chart
       chart.draw();
       }
 
+    // create a bar chart "Total sections assessment"
     function allStudSections(myData, title, container){
+      // calculate total score for each section
       var  allListening =0 , allReading = 0, allWriting =0, allSpeaking = 0;
       for (i = 0; i < myData.length; i++) {
         allListening = allListening + myData[i]['sections']['listening'];
@@ -309,24 +318,31 @@ function academic_performance_dashboard(myData) {
         {x: "writing", value: allWriting},
         {x: "speaking", value: allSpeaking}
       ]
+
       chart = anychart.bar()
+
+      // create a bar series
       var series = chart.bar(allSectData);
       series.name("Total");
       series.selectionMode("none");
 
+      // set the chart title
       chart.title('Total sections assessment');
 
-      series.normal().fill("#FF8C00");
-      series.normal().stroke("#ef6d30");
-      var tooltip = series.tooltip();
+      // set the chart color
+      series.normal().fill("#3888d8");
+      series.normal().stroke("#1975d2");
 
+      // set the container
       chart.container("section-container");
 
-    // initiate drawing the chart
+      // initiate drawing the chart
       chart.draw();
     }
 
+    // create a pie chart "Specialized subject assessment"
     function allSpeci(myData, title, container){
+      // calculate number of people for whom the subject is specialized
       var speci = 0, notSpeci = 0;
       for (i = 0; i < myData.length; i++) {
         if (myData[i]['specialized_subject'] == true) {
@@ -339,30 +355,35 @@ function academic_performance_dashboard(myData) {
       var data = [
        {x: "Specialized", value: speci},
        {x: "Not specialized", value: notSpeci}
-        ];
+      ];
 
-   // create a chart and set the data
-   chart = anychart.pie(data);
+     // create a chart and set the data
+     chart = anychart.pie(data);
 
-   // set the chart title
-   chart.title("Specialized subject assessment");
+     // configure tooltip
+     var tooltip = chart.tooltip();
+     tooltip.format("Students: {%Value} \n Percentage: {%yPercentOfTotal}%");
+     // set the chart title
+     chart.title("Specialized subject assessment");
 
-   // set the container id
-   chart.container("speci-container");
+     // set the container id
+     chart.container("speci-container");
 
-   // initiate drawing the chart
-   chart.draw();
+     // initiate drawing the chart
+     chart.draw();
 
     }
 }
 anychart.onDocumentReady(function () {
   var myData = students_data();
+
+  //sort the data by accomplished value
   myData = myData.sort(function (b, a) {
     return (a.accomplished - b.accomplished)
-});
+  });
 
-    // draw dashboard
-    academic_performance_dashboard(myData);
+  // draw the dashboard
+  academic_performance_dashboard(myData);
 });
 
 $(window).on('load', function () {

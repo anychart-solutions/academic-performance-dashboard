@@ -5,7 +5,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 90,
       "accomplished": 87,
-      "missed": 4,
       "sections":
         {
           "listening": 3,
@@ -19,7 +18,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 60,
       "accomplished": 55,
-      "missed": 1,
       "sections":
         {
           "listening": 3,
@@ -33,7 +31,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 80,
       "accomplished": 71,
-      "missed": 4,
       "sections":
         {
           "listening": 3,
@@ -47,7 +44,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 90,
       "accomplished": 69,
-      "missed": 3,
       "sections":
         {
           "listening": 3,
@@ -61,7 +57,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 90,
       "accomplished": 90,
-      "missed": 3,
       "sections":
         {
           "listening": 1,
@@ -75,7 +70,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 90,
       "accomplished": 89,
-      "missed": 4,
       "sections":
         {
           "listening": 2,
@@ -89,7 +83,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 80,
       "accomplished": 54,
-      "missed": 3,
       "sections":
         {
           "listening": 4,
@@ -103,7 +96,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 80,
       "accomplished": 90,
-      "missed": 2,
       "sections":
         {
           "listening": 2,
@@ -117,7 +109,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 80,
       "accomplished": 74,
-      "missed": 2,
       "sections":
         {
           "listening": 4,
@@ -131,7 +122,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 70,
       "accomplished": 61,
-      "missed": 5,
       "sections":
         {
           "listening": 2,
@@ -145,7 +135,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 60,
       "accomplished": 49,
-      "missed": 1,
       "sections":
         {
           "listening": 4,
@@ -159,7 +148,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 80,
       "accomplished": 100,
-      "missed": 1,
       "sections":
         {
           "listening": 4,
@@ -173,7 +161,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 70,
       "accomplished": 89,
-      "missed": 5,
       "sections":
         {
           "listening": 2,
@@ -187,7 +174,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 80,
       "accomplished": 94,
-      "missed": 5,
       "sections":
         {
           "listening": 4,
@@ -201,7 +187,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 90,
       "accomplished": 99,
-      "missed": 4,
       "sections":
         {
           "listening": 2,
@@ -215,7 +200,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 60,
       "accomplished": 81,
-      "missed": 4,
       "sections":
         {
           "listening": 2,
@@ -229,7 +213,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 70,
       "accomplished": 82,
-      "missed": 3,
       "sections":
         {
           "listening": 2,
@@ -243,7 +226,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 90,
       "accomplished": 73,
-      "missed": 1,
       "sections":
         {
           "listening": 2,
@@ -257,7 +239,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 80,
       "accomplished": 72,
-      "missed": 2,
       "sections":
         {
           "listening": 4,
@@ -271,7 +252,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 90,
       "accomplished": 88,
-      "missed": 2,
       "sections":
         {
           "listening": 3,
@@ -285,7 +265,6 @@ function students_data() {
       "specialized_subject": true,
       "target": 60,
       "accomplished": 78,
-      "missed": 4,
       "sections":
         {
           "listening": 4,
@@ -299,7 +278,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 70,
       "accomplished": 65,
-      "missed": 3,
       "sections":
         {
           "listening": 3,
@@ -313,7 +291,6 @@ function students_data() {
       "specialized_subject": false,
       "target": 90,
       "accomplished": 70,
-      "missed": 5,
       "sections":
         {
           "listening": 4,
@@ -323,11 +300,23 @@ function students_data() {
         }
     },
     {
+     "full_name": "Florina Redwall",
+     "specialized_class": true,
+     "target": 80,
+     "accomplished": 93,
+     "sections":
+       {
+         "listening": 4,
+         "reading": 4,
+         "writing": 1,
+         "speaking": 4
+       }
+   },
+    {
       "full_name": "Lorettalorna Dearle-Palser",
       "specialized_subject": true,
       "target": 60,
       "accomplished": 77,
-      "missed": 1,
       "sections":
         {
           "listening": 4,
