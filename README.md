@@ -16,18 +16,22 @@ All of the dashboard parts we’ve just mentioned will be on one page, so you do
 This table will provide users with information about each student’s target and final score, achievements in listening, reading, writing and speaking, and show the students for whom English is a major subject. Students will be displayed in descending order of their final scores:
 
 <img src="readme_pics/1.png">
+
 ### Total grade assessment
 Since we got the information about all the people in class separately, then let’s see how many of them got grades A, B, C etc:
 
 <img src="readme_pics/2.png">
+
 ### Total sections assessment
 Also, we may want to know which section has better results and which one is worth paying attention to:
 
 <img src="readme_pics/3.png">
+
 ### Major subject assessment
 And the last part of our dashboard is the chart which shows the percentage of students whose major subject is English:
 
 <img src="readme_pics/4.png">
+
 ### Final view
 So, our Academic Performance Dashboard will look more or less like this:
 
