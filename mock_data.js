@@ -2,7 +2,7 @@ function students_data() {
     return [
     {
       "full_name": "Linell Camous",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 90,
       "accomplished": 87,
       "sections":
@@ -15,7 +15,7 @@ function students_data() {
     },
     {
       "full_name": "Melvyn Acey",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 60,
       "accomplished": 55,
       "sections":
@@ -28,7 +28,7 @@ function students_data() {
     },
     {
       "full_name": "Bette-ann Sickamore",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 80,
       "accomplished": 71,
       "sections":
@@ -41,7 +41,7 @@ function students_data() {
     },
     {
       "full_name": "Cicily Weatherhill",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 90,
       "accomplished": 69,
       "sections":
@@ -54,7 +54,7 @@ function students_data() {
     },
     {
       "full_name": "Mira Coxhead",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 90,
       "accomplished": 90,
       "sections":
@@ -67,7 +67,7 @@ function students_data() {
     },
     {
       "full_name": "Alfredo Dudmarsh",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 90,
       "accomplished": 89,
       "sections":
@@ -80,7 +80,7 @@ function students_data() {
     },
     {
       "full_name": "Angelina Merrett",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 80,
       "accomplished": 54,
       "sections":
@@ -93,7 +93,7 @@ function students_data() {
     },
     {
       "full_name": "Danya Beall",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 80,
       "accomplished": 90,
       "sections":
@@ -106,7 +106,7 @@ function students_data() {
     },
     {
       "full_name": "Quintana Liddiatt",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 80,
       "accomplished": 74,
       "sections":
@@ -119,7 +119,7 @@ function students_data() {
     },
     {
       "full_name": "Bronnie Ottawell",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 70,
       "accomplished": 61,
       "sections":
@@ -132,7 +132,7 @@ function students_data() {
     },
     {
       "full_name": "Kele Vlach",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 60,
       "accomplished": 49,
       "sections":
@@ -145,7 +145,7 @@ function students_data() {
     },
     {
       "full_name": "Panchito Lazer",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 80,
       "accomplished": 100,
       "sections":
@@ -158,7 +158,7 @@ function students_data() {
     },
     {
       "full_name": "Alaric Mapletoft",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 70,
       "accomplished": 89,
       "sections":
@@ -171,7 +171,7 @@ function students_data() {
     },
     {
       "full_name": "Robin Galbreth",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 80,
       "accomplished": 94,
       "sections":
@@ -184,7 +184,7 @@ function students_data() {
     },
     {
       "full_name": "Loraine D'Hooge",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 90,
       "accomplished": 99,
       "sections":
@@ -197,7 +197,7 @@ function students_data() {
     },
     {
       "full_name": "Thadeus Willford",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 60,
       "accomplished": 81,
       "sections":
@@ -210,7 +210,7 @@ function students_data() {
     },
     {
       "full_name": "Danit Dawnay",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 70,
       "accomplished": 82,
       "sections":
@@ -223,7 +223,7 @@ function students_data() {
     },
     {
       "full_name": "Jobey Corthes",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 90,
       "accomplished": 73,
       "sections":
@@ -236,7 +236,7 @@ function students_data() {
     },
     {
       "full_name": "Cecilia Garrettson",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 80,
       "accomplished": 72,
       "sections":
@@ -249,7 +249,7 @@ function students_data() {
     },
     {
       "full_name": "Clemmie Worsnap",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 90,
       "accomplished": 88,
       "sections":
@@ -262,7 +262,7 @@ function students_data() {
     },
     {
       "full_name": "Lani Harrowell",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 60,
       "accomplished": 78,
       "sections":
@@ -275,7 +275,7 @@ function students_data() {
     },
     {
       "full_name": "Alvin Antonijevic",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 70,
       "accomplished": 65,
       "sections":
@@ -288,7 +288,7 @@ function students_data() {
     },
     {
       "full_name": "Vaughan Lies",
-      "specialized_subject": false,
+      "major_subject": false,
       "target": 90,
       "accomplished": 70,
       "sections":
@@ -301,7 +301,7 @@ function students_data() {
     },
     {
      "full_name": "Florina Redwall",
-     "specialized_class": true,
+     "major_class": true,
      "target": 80,
      "accomplished": 93,
      "sections":
@@ -314,7 +314,7 @@ function students_data() {
    },
     {
       "full_name": "Lorettalorna Dearle-Palser",
-      "specialized_subject": true,
+      "major_subject": true,
       "target": 60,
       "accomplished": 77,
       "sections":

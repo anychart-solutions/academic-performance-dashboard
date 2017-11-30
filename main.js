@@ -5,7 +5,7 @@ function hidePreloader() {
 function academic_performance_dashboard(myData) {
     allStudSections(myData);
     allStudGrade(myData);
-    allSpeci(myData);
+    allmajor(myData);
 
   // set a stage
   stage = anychart.graphics.create("stud-container");
@@ -58,8 +58,8 @@ function academic_performance_dashboard(myData) {
         }
     ]);
 
-    // create a legend for specialized subject
-    var getSpecLegend = function (items) {
+    // create a legend for major subject
+    var getmajorLegend = function (items) {
     var legend = anychart.standalones.legend();
     legend.fontSize('12px')
             .fontFamily("'Verdana', Helvetica, Arial, sans-serif")
@@ -74,10 +74,10 @@ function academic_performance_dashboard(myData) {
             .iconSize(10);
       return legend
     }
-    var specLegend = getSpecLegend([
+    var majorLegend = getmajorLegend([
     {
         'index': 0,
-        'text': 'specialized subject',
+        'text': 'major subject',
         'iconType': "circle",
         'iconStroke': 'none',
         'iconFill': "#A65140"
@@ -92,7 +92,7 @@ function academic_performance_dashboard(myData) {
   title.container(stage).draw();
 
   // content for a table header
-  var contents = [[null,null,"Students", "Variance from target,", "%", "Final score", "Sections (0-5 scores)"],["",,specLegend,makeAxis(),"","",eachBarLegend]];
+  var contents = [[null,null,"Students", "Variance from target,", "%", "Final score", "Sections (0-5 scores)"],["",,majorLegend,makeAxis(),"","",eachBarLegend]];
 
   // create a table
   var table = anychart.standalones.table();
@@ -102,7 +102,7 @@ function academic_performance_dashboard(myData) {
   for(var i= 0; i<myData.length; i++){
     contents.push([
       i+1,
-      specSubject(i),
+      majorSubject(i),
       myData[i]['full_name'],
       newBullet(i),
       calculatePercentToTarget(i),
@@ -120,16 +120,17 @@ function academic_performance_dashboard(myData) {
     .height(40)
     .fontColor("#111")
     .border()
-    .bottom("2 #ccc");
+    .bottom("2 #ccc")
+    .hAlign("left");
+
+  // set visual settings for the text in table
+  table.vAlign("middle").hAlign("left").fontWeight('normal').fontSize(14);
 
   // set fixed width for columns
   table.getCol(0).width(40);
   table.getCol(1).width(30);
   table.getCol(4).width(70);
-  table.getCol(5).width(100);
-
-  // set visual settings for the text in table
-  table.vAlign("middle").hAlign("left").fontWeight('normal').fontSize(14);
+  table.getCol(5).width(100).hAlign("center");
 
   // set the table container and initiate drawing
   table.container(stage).draw();
@@ -189,14 +190,14 @@ function academic_performance_dashboard(myData) {
    return eachBar;
   }
 
-  // create a red circle for specialized subject
-  function specSubject (i) {
+  // create a red circle for major subject
+  function majorSubject (i) {
 
-    if (myData[i]['specialized_subject']==true) {
-      var specCircle = acgraph.circle(5, 5, 5);
-      specCircle.fill("#a65140");
-      specCircle.stroke(false);
-    return specCircle;
+    if (myData[i]['major_subject']==true) {
+      var majorCircle = acgraph.circle(5, 5, 5);
+      majorCircle.fill("#a65140");
+      majorCircle.stroke(false);
+    return majorCircle;
     }
   }
 
@@ -340,21 +341,21 @@ function academic_performance_dashboard(myData) {
       chart.draw();
     }
 
-    // create a pie chart "Specialized subject assessment"
-    function allSpeci(myData, title, container){
-      // calculate number of people for whom the subject is specialized
-      var speci = 0, notSpeci = 0;
+    // create a pie chart "major subject assessment"
+    function allmajor(myData, title, container){
+      // calculate number of people for whom the subject is major
+      var major = 0, notmajor = 0;
       for (i = 0; i < myData.length; i++) {
-        if (myData[i]['specialized_subject'] == true) {
-          speci++;
+        if (myData[i]['major_subject'] == true) {
+          major++;
         }
         else{
-          notSpeci++;
+          notmajor++;
         }
       }
       var data = [
-       {x: "Specialized", value: speci},
-       {x: "Not specialized", value: notSpeci}
+       {x: "Major", value: major},
+       {x: "Not major", value: notmajor}
       ];
 
      // create a chart and set the data
@@ -364,10 +365,10 @@ function academic_performance_dashboard(myData) {
      var tooltip = chart.tooltip();
      tooltip.format("Students: {%Value} \n Percentage: {%yPercentOfTotal}%");
      // set the chart title
-     chart.title("Specialized subject assessment");
+     chart.title("Major subject assessment");
 
      // set the container id
-     chart.container("speci-container");
+     chart.container("major-container");
 
      // initiate drawing the chart
      chart.draw();
