@@ -116,7 +116,7 @@ function academic_performance_dashboard(myData) {
 
   // set parameters for the first row
   table.cellBorder(null)
-  table.getRow(0)
+  table.getRow(1)
     .height(40)
     .fontColor("#111")
     .border()

@@ -5,10 +5,10 @@ Dashboards often provide at-a-glance views of key performance indicators relevan
 ## Dashboard Concept
 Academic Performance Dashboard presents information about students: their targets and achievements, grades and so on. It is very useful for teachers or other people who want to get a quick insight into the progress of each student attending one or another course or progress in general.
 This dashboard illustrates English course information and for the sake of convenience it is divided into 4 parts:
-1. Table with information about each student separately
-2. Bar chart with total grade assessment
-3. Bar chart with total sections assessment (listening, reading, writing, speaking)
-4. Pie chart with percentage of students who chose English as a major subject
+1. Table with information about each student separately.
+2. Bar chart with total grade assessment.
+3. Bar chart with total sections assessment (listening, reading, writing, speaking).
+4. Pie chart with percentage of students who chose English as a major subject.
 
 ## Visual Presentation
 All of the dashboard parts we’ve just mentioned will be on one page, so you don’t need to make extra effort to see the whole picture. All we should do is draw the dashboard on a piece of paper or using some graphics editor in order to choose the best layout. So let’s draw and describe each part.
@@ -18,7 +18,7 @@ This table will provide users with information about each student’s target and
 <img src="readme_pics/1.png">
 
 ### Total grade assessment
-Since we got the information about all the people in class separately, then let’s see how many of them got grades A, B, C etc:
+Since we got the information about all the people in class separately, let’s see how many of them got grades A, B, C etc:
 
 <img src="readme_pics/2.png">
 
