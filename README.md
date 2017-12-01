@@ -1,6 +1,8 @@
-# Academic Performance Dashboard
+[<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](https://www.anychart.com)
+
+## Academic Performance Dashboard
 ## Overview
-Dashboards often provide at-a-glance views of key performance indicators relevant to a particular objective or business process. This article will show you how AnyChart Charting Solution may help to create an academic performance dashboard. It should be noticed that the dashboard can be extended depending on what users want to see, but here we have a basic sample to understand the concept better.
+Dashboards often provide at-a-glance views of key performance indicators relevant to a particular objective or business process. This article will show you how AnyChart Charting Solution may help to create an acadmic performance dashboard. It should be noticed that the dashboard can be extended depending on what users want to see, but here we have a basic sample to understand the concept better.
 
 ## Dashboard Concept
 Academic Performance Dashboard presents information about students: their targets and achievements, grades and so on. It is very useful for teachers or other people who want to get a quick insight into the progress of each student attending one or another course or progress in general.
@@ -36,3 +38,17 @@ And the last part of our dashboard is the chart which shows the percentage of st
 So, our Academic Performance Dashboard will look more or less like this:
 
 <img src="readme_pics/5.png">
+
+## License
+AnyChart Academic Performance Dashboard solution includes two parts:
+- code of the solution that allows to use Javascript library (in this case, AnyChart).
+You can use, edit, modify it, use it with other Javascript libraries without any
+restrictions. It is released under [Apache 2.0 License](LICENSE).
+- AnyChart JavaScript library. It is released under Commercial license.
+You can test this solution with the trial version of AnyChart.
+Our trial version is not limited by time and doesn't contain any feature limitations.
+Check details [here](https://www.anychart.com/buy/)
+
+If you have any questions regarding licensing - please contact us. <sales@anychart.com>
+
+[![Analytics](https://ga-beacon.appspot.com/UA-228820-4/Solutions/academic-performance-dashboard?pixel&useReferer)](https://github.com/igrigorik/ga-beacon)
